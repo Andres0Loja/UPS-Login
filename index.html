@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correo Electronico - Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-panel" aria-labelledby="login-title">
+            <p class="eyebrow">Sistema local</p>
+            <h1 id="login-title">Iniciar sesion</h1>
+            <p class="muted">Ingresa con un usuario registrado para acceder al sistema.</p>
+
+            <form id="loginForm" class="form" novalidate>
+                <div class="field">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" autocomplete="username" placeholder="admin">
+                </div>
+
+                <div class="field">
+                    <label for="password">Contrasena</label>
+                    <input type="password" id="password" name="password" autocomplete="current-password" placeholder="admin">
+                </div>
+
+                <p id="loginMessage" class="message" role="status" aria-live="polite"></p>
+
+                <button type="submit" class="button button-primary">Entrar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

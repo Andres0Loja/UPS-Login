@@ -1,0 +1,266 @@
+:root {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface-strong: #eef3f7;
+    --text: #1d2733;
+    --muted: #667485;
+    --line: #d8e0e8;
+    --primary: #176b87;
+    --primary-dark: #0f4f66;
+    --danger: #b42318;
+    --success: #16703c;
+    --shadow: 0 18px 45px rgba(29, 39, 51, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0.35rem;
+    font-size: clamp(1.8rem, 4vw, 2.55rem);
+    line-height: 1.1;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.auth-page {
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+}
+
+.auth-shell {
+    width: min(100%, 430px);
+}
+
+.auth-panel,
+.form-section,
+.table-section,
+.status-section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.auth-panel {
+    padding: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem clamp(1rem, 4vw, 2rem);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+.content,
+.admin-layout {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 1.5rem auto;
+}
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.form-section,
+.table-section,
+.status-section {
+    padding: 1.25rem;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+}
+
+.field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.7rem 0.8rem;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid rgba(23, 107, 135, 0.18);
+    border-color: var(--primary);
+}
+
+.button {
+    min-height: 44px;
+    border: 0;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.button-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.button-primary:hover {
+    background: var(--primary-dark);
+}
+
+.button-secondary {
+    background: var(--surface-strong);
+    color: var(--text);
+    border: 1px solid var(--line);
+}
+
+.button-secondary:hover {
+    background: #e3ebf2;
+}
+
+.button-danger {
+    background: #fff1f0;
+    color: var(--danger);
+    border: 1px solid rgba(180, 35, 24, 0.26);
+}
+
+.button-danger:hover {
+    background: #ffe4e1;
+}
+
+.button-small {
+    min-height: 36px;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+.form-actions,
+.row-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.eyebrow {
+    margin-bottom: 0.35rem;
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.muted {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+.message {
+    display: none;
+    margin: 0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.message.is-error {
+    display: block;
+    color: var(--danger);
+    border-color: rgba(180, 35, 24, 0.24);
+    background: rgba(180, 35, 24, 0.08);
+}
+
+.message.is-success {
+    display: block;
+    color: var(--success);
+    border-color: rgba(22, 112, 60, 0.22);
+    background: rgba(22, 112, 60, 0.08);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+th,
+td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    background: var(--surface-strong);
+    font-size: 0.86rem;
+    text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+@media (max-width: 760px) {
+    .topbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+}

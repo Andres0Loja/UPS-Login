@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correo Electronico - Administracion</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Panel de administracion</p>
+            <h1>Gestion de usuarios</h1>
+        </div>
+        <button type="button" id="logoutButton" class="button button-secondary">Cerrar sesion</button>
+    </header>
+
+    <main class="admin-layout">
+        <section class="form-section" aria-labelledby="userFormTitle">
+            <h2 id="userFormTitle">Crear usuario</h2>
+            <form id="createUserForm" class="form" novalidate>
+                <div class="field">
+                    <label for="newUsername">Usuario</label>
+                    <input type="text" id="newUsername" name="username" autocomplete="off" placeholder="usuario">
+                </div>
+
+                <div class="field">
+                    <label for="newPassword">Contrasena</label>
+                    <input type="password" id="newPassword" name="password" autocomplete="new-password" placeholder="Minimo 1 caracter">
+                </div>
+
+                <div class="field">
+                    <label for="newRole">Rol</label>
+                    <select id="newRole" name="role">
+                        <option value="user">Usuario normal</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+
+                <p id="createUserMessage" class="message" role="status" aria-live="polite"></p>
+
+                <div class="form-actions">
+                    <button type="submit" id="saveUserButton" class="button button-primary">Crear usuario</button>
+                    <button type="button" id="cancelEditButton" class="button button-secondary is-hidden">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section" aria-labelledby="usersTitle">
+            <div class="section-heading">
+                <div>
+                    <h2 id="usersTitle">Usuarios registrados</h2>
+                    <p id="adminWelcome" class="muted"></p>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
